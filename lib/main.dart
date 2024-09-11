@@ -28,15 +28,14 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(25.0),
         child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
           children: [
 
             const Padding(
-              padding: EdgeInsets.all(150.0),
+              padding: EdgeInsets.all(75.0),
               child: const Text(
                   "Авторизация",
                 style: TextStyle(

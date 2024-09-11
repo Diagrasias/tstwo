@@ -24,3 +24,4 @@
 ## Скрины
 
 ![](images/windows.png)
+![](images/android.jpg)
