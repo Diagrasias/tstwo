@@ -14,21 +14,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
@@ -43,8 +28,110 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(centerTitle: true, title: const Text("Авторизация"),
+
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+
+            const Padding(
+              padding: EdgeInsets.all(150.0),
+              child: const Text(
+                  "Авторизация",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30,
+                ),
+              ),
+            ),
+
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: const TextField(decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: "Логин",
+                hintStyle: TextStyle(color: Colors.grey, fontSize: 20),
+                filled: true,
+              ),),
+            ),
+
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: const TextField(decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: "Пароль",
+                hintStyle: TextStyle(color: Colors.grey, fontSize: 20),
+                filled: true,
+              ),),
+            ),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Checkbox(value: false, onChanged: (bool? value) {}),
+                const Text(
+                  'Запомнить меня',
+                  style: TextStyle(color: Colors.grey, fontSize: 20),
+                ),
+              ],
+            ),
+
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.zero,
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: const Text(
+                    'Войти',
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                ),
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.zero,
+                        side: BorderSide(color: Colors.blue)),
+                  ),
+                  onPressed: () {},
+                  child: const Text(
+                    'Регистрация',
+                    style: TextStyle(color: Colors.blue, fontSize: 20),
+                  ),
+                ),
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: GestureDetector(
+                onTap: () {},
+                child: const Text(
+                  'Восстановить Пароль',
+                  style: TextStyle(color: Colors.grey, fontSize: 20),
+                ),
+              ),
+            ),
+
+          ],
+        ),
       ),
+
     );
   }
 }
